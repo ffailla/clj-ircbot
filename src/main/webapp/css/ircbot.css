@@ -1,0 +1,69 @@
+/* ircbot.css */
+
+body
+{
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: rgb(76, 80, 84);
+}
+
+a:link, a:visited, a:hover, a:active
+{
+    color: rgb(92, 135, 178);
+    text-decoration: underline;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+a:active
+{
+    color: rgb(117, 188,126);
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+.irc-title {
+   color: rgb(92, 135, 178);
+    text-decoration: underline;
+    cursor: pointer;
+}}
+.days {
+}
+.day {
+    list-style-type: none
+}
+.days-hidden {
+    display: none;
+}
+.day-text {
+    color: rgb(92, 135, 178);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.day-text:hover
+{
+    text-decoration: none;
+}
+
+.records {
+}
+.log-entry {
+}
+.log-entry-datetime {
+    padding: 0.25em 0.25em 0.25em 0.25em;
+}
+.log-entry-sender {
+    padding: 0.25em 0.25em 0.25em 0.25em;
+}
+.log-entry-message {
+    padding: 0.25em 0.25em 0.25em 0.25em;
+}
