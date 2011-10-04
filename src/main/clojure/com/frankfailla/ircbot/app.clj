@@ -1,5 +1,5 @@
 (ns com.frankfailla.ircbot.app
-  (:require [clojure.contrib.logging :as logging]
+  (:require [clojure.tools.logging :as logging]
 	    [com.frankfailla.ircbot.web :as web]
 	    [com.frankfailla.ircbot.bot :as bot]
 	    [com.frankfailla.ircbot.sdb :as sdb]

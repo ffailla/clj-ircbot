@@ -2,7 +2,7 @@
   (:require [com.frankfailla.ircbot.utils :as utils])
   (:import [org.jibble.pircbot PircBot]))
 
-(def *bot* (atom nil))
+(def ^:dynamic *bot* (atom nil))
 
 (defn hash-channel [c] (str "#" c))
 

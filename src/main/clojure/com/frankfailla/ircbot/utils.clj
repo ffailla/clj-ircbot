@@ -1,15 +1,15 @@
 (ns com.frankfailla.ircbot.utils
-  (:require [clojure.contrib.logging :as logging]))
+  (:require [clojure.tools.logging :as logging]))
 
-(def *date-format*
+(def ^:dynamic *date-format*
   (doto (java.text.SimpleDateFormat. "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     (.setTimeZone (java.util.TimeZone/getTimeZone "UTC"))))
 
-(def *datekey-format*
+(def ^:dynamic *datekey-format*
   (doto (java.text.SimpleDateFormat. "yyyyMMddHHmmssSSS")
     (.setTimeZone (java.util.TimeZone/getTimeZone "UTC"))))
 
-(def *dateday-format*
+(def ^:dynamic *dateday-format*
   (doto (java.text.SimpleDateFormat. "yyyyMMdd")
     (.setTimeZone (java.util.TimeZone/getTimeZone "UTC"))))
 

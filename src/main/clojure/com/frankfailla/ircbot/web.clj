@@ -1,5 +1,5 @@
 (ns com.frankfailla.ircbot.web
-  (:require [clojure.contrib.json :as json]
+  (:require [clojure.data.json :as json]
 	    [ring.adapter.jetty :as jetty]
 	    [ring.middleware.file :as ring-file]
 	    [compojure.core :as compojure]
@@ -16,10 +16,10 @@
         (utils/publish e)
         (throw e)))))
 
-(def *jetty-server* (atom nil))
-(def *web-root* (str (System/getProperty "user.dir") "/src/main/webapp"))
+(def ^:dynamic *jetty-server* (atom nil))
+(def ^:dynamic *web-root* (str (System/getProperty "user.dir") "/src/main/webapp"))
 
-(def *web-app*
+(def ^:dynamic *web-app*
   (when (not *compile-files*)
     (-> (compojure/routes 
 	 (compojure/GET "/botchannel" []
