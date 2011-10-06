@@ -63,3 +63,11 @@
 (defn props-to-system
   [props]
   (doall (map (fn [[k v]] (System/setProperty k v)) props)))
+
+(defn set-props
+  [props]
+  (let [p (java.util.Properties.)]
+    (doseq [[k v] props]
+      (.put p k v))
+    (org.apache.log4j.PropertyConfigurator/configure p)
+    p))

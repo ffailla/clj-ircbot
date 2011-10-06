@@ -1,5 +1,6 @@
 (ns com.frankfailla.ircbot.bot
-  (:require [com.frankfailla.ircbot.utils :as utils])
+  (:require [com.frankfailla.ircbot.utils :as utils]
+            [clojure.tools.logging :as logging])
   (:import [org.jibble.pircbot PircBot]))
 
 (def ^:dynamic *bot* (atom nil))
@@ -9,6 +10,8 @@
 (defn pircbot
   [processor]
   (proxy [PircBot] []
+    (sendMessage [channel message]
+      (proxy-super sendMessage channel message))
     (onMessage [channel sender login hostname messsage]
       (processor channel sender login hostname messsage))))
 
@@ -38,6 +41,10 @@
 	       :login login
 	       :hostname hostname
 	       :message message)))
+
+(defn send-message
+  [channel message]
+  (.sendMessage @*bot* channel message))
 
 (defn start-bot
   ([name server channel processor]
